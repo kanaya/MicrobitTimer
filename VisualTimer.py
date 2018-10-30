@@ -12,6 +12,10 @@ def start():
 
 start()
 while mins < 25:
+    if button_a.is_pressed():
+        mins = 0
+        secn = 0
+        start()
     (y, x) = divmod(mins, 5)
     s = int((60 - secs) / 10)
     display.set_pixel(x, y, s)
