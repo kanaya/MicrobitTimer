@@ -13,9 +13,7 @@ def start():
 start()
 while mins < 25:
     if button_a.is_pressed():
-        mins = 0
-        secn = 0
-        start()
+        reset()
     (y, x) = divmod(mins, 5)
     s = int((60 - secs) / 10)
     display.set_pixel(x, y, s)
@@ -25,5 +23,7 @@ while mins < 25:
         mins += 1
     sleep(1 * 1000)
 while True:
+    if button_a.is_pressed():
+        reset()
     display.scroll("End.")
     sleep(5 * 1000)
